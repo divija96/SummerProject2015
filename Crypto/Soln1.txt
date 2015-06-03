@@ -1,0 +1,24 @@
+//Program to take 2 strings as input and produce their XOR as output
+
+
+Code:
+#include <stdio.h>
+#include <string.h>
+int main(void) 
+
+{
+int i,len;
+char a[10],b[10],c[10];
+gets(a);gets(b);
+len=(strlen(a)<strlen(b))?strlen(a):strlen(b);
+for(i=0;i<len;i++)
+c[i] = (char) (a[i] ^ b[i]);
+puts(c);
+
+
+return 0;
+}
+
+Input:abc
+      qwert
+Output:˜Ò…
