@@ -1,0 +1,6 @@
+Brief Solutions to Hack This Site Problems.
+
+
+Level 2:-
+Step 1:Understand description given.
+Step 2:Just press Enter.             (Since no password file was uploaded the variable meant to do so has the value null)
