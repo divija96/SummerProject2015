@@ -1,0 +1,10 @@
+This part of the repo shall contain solns to the assignments given during the Reversing and pwning sessions on the following topics:
+1)x86 architecture
+2)Disassembling using radare2
+3)Beffer overflow attacks
+4)SmashTheStack Problems
+5)Format String vulnerability
+6)SECCON and CSAW
+7)Steganography
+8)Forensics
+
