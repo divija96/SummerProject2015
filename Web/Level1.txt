@@ -1,0 +1,8 @@
+# Solns_HTS
+Brief Solutions to Hack This Site Problems.
+
+
+Level 1:-
+Step 1:Press Ctrl+u                               (To view The source html file of the page)
+Step 2:Scan through the lines of code.            (To find the password)
+Step 3:Enter the found password in the box given and press Enter. 
