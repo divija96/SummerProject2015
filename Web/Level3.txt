@@ -1,0 +1,7 @@
+Brief Solutions to Hack This Site Problems.
+
+Level 3:-
+Step 1:Press Ctrl+u
+Step 2:Go through source code,Password has been stored in password.php
+Step 3:Add password.php in the webpage's url and press enter.
+Step 4:Type the password got in Step 3 and press enter.
