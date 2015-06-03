@@ -1,0 +1,22 @@
+TOPIC:Simple steps to get started with radare2:
+REFERENCES:https://gist.github.com/sushant94/5e37971f424fd2d6f2d1
+
+
+
+1.build r2.
+2.download the bin1 file and follow the instructions in the link to make it an executable.
+3.run it as usual:  ./Your_File_Name.out     OUTPUT: hello world
+4.if it says cannot execute, give it execute permissions: chmod +x ./Your_File_Name.out
+5.Then $r2 ./Your_File_Name.out
+6.run aa.
+7.go into visual mode. `V` for Visual mode.
+8.hit p to print the disassembly of the current region.
+9.ok, so since this is a simple hello world program,head over to main. To see all the functions that radare detected using the analysis, hit v.
+10.So scrolldown the list using arrow keys till you reach sym.main and hit g.
+11.hit q to return back to the disassembly.
+12.read the disassembly of main.
+13. Understanding The code...
+see how "puts" is being called.
+The string ("hello world" in this case), is moved into edi. Since this string is a constant "baked" into the program, it is stored in the   DATA segment and referenced here directly.
+So in x86-64 , upto four arguments are passed through registers, these are usually rdi/edi, rsi/esi ...
+
