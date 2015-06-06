@@ -1,0 +1,52 @@
+TOPIC:Simple steps to get started with radare2:
+REFERENCES:https://gist.github.com/sushant94/5e37971f424fd2d6f2d1  ,http://www.cs.virginia.edu/~evans/cs216/guides/x86.html
+OBJECTIVE:to get the ouput as Success ny analysing the disassembly.
+
+
+1.Basic procedure:build r2.
+                   download the bin2 file and follow the instructions in the link to make it an executable.
+                   run it as usual:  ./Your_File_Name.out     OUTPUT:1)Fail 2)Nope 3)Success
+2. Go to main : r2 ./Your_File_Name.out
+                aa
+                V
+                p
+                v
+                scroll down till you reach sym.main
+                g
+3.Analyse the code(Assuming  "0x0040059d    55             push rbp" to be line 1)
+               1  Lines 1,2,3 =>standard
+               2  Lines 4,5,6 =>Loading of effective adresses in rcx,rdx,rax.
+               3  Lines 7,8,9,10,11 =>Taking the input
+               4  Line 12  =>Moving 1st input to eax
+               5  Line 13,14 =>comparing with 3 and jumping to gv output as "Nope."if true
+               6  Line 15  =>Moving 2nd input to eax
+               7  Line 16,17 =>comparing with 4 and jumping to gv output as "Nope."if true
+               8  Line 18  =>Moving 3rd input to eax
+               9  Line 19,20 =>comparing with 4 and jumping to next section of the code if false
+               10 Line 21-28 =>gvs output "Nope"
+               11 Line 29,30,31 =>Moving 1st input to edx and eax and subsequently storing its square in edx 
+               12 Line 32,33,34 =>Moving 2nd input to ecx and eax and subsequently storing its square in eax 
+               13 Line 35=>Loading in ecx the addition of the squares got in the above 2 steps
+               14 Line 36,37,38 =>Moving 3rd input to edx and eax and subsequently storing its square in eax 
+               15 Lines 39,40 =>Compare result got steps 12 and 13 and jump to gv output as "Fail!" if false
+               16 Lines 41-45 =>Get executed if control doesnt jump and gvs output as "Success"
+               17 Lines 46-53 =>Gives ouput as "Fail"
+4.Corresponding C code:
+                        #include <stdio.h>
+
+                         int main(void) 
+                       {
+	                 int a,b,c;
+                         scanf("%d%d%d",&a,&b,&c);
+                         if( (a==3)||(b==4)||(c==4))
+                         printf("Nope");
+                         else if(((a*a)+(b*b))==(c*c)) 
+                         printf("Success");
+                         else
+                         printf("Fail!");
+	                 return 0;
+                       }
+5.Thus any pythagorean triplet will give the output.  
+                         
+                
+                
